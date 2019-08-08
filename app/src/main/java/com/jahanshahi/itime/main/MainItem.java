@@ -5,6 +5,15 @@ import android.graphics.drawable.Drawable;
 class MainItem {
     private Drawable background;
     private String title;
+    private String description;
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     public Drawable getBackground() {
         return background;

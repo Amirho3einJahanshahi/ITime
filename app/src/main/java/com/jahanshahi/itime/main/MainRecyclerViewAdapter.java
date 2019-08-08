@@ -27,15 +27,16 @@ public class MainRecyclerViewAdapter extends RecyclerView.Adapter<MainRecyclerVi
     @NonNull
     @Override
     public MainViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_main,parent,false);
+        View view = LayoutInflater.from(context).inflate(R.layout.main_item,parent,false);
         return new MainViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MainViewHolder holder, int position) {
         MainItem item = items.get(position);
-        holder.background.setImageDrawable(item.getBackground());
+        holder.icon.setImageDrawable(item.getBackground());
         holder.title.setText(item.getTitle());
+        holder.description.setText(item.getDescription());
     }
 
     @Override
@@ -44,13 +45,15 @@ public class MainRecyclerViewAdapter extends RecyclerView.Adapter<MainRecyclerVi
     }
 
     public class MainViewHolder extends RecyclerView.ViewHolder{
-        ImageView background;
-        TextView title;
+        ImageView icon;
+        TextView title , description;
         public MainViewHolder(@NonNull View itemView) {
             super(itemView);
-            background = itemView.findViewById(R.id.item_main_bg);
-            title = itemView.findViewById(R.id.item_main_title);
+            icon = itemView.findViewById(R.id.main_item_icon);
+            title = itemView.findViewById(R.id.main_item_title);
+            description = itemView.findViewById(R.id.main_item_description);
             title.setTypeface(font);
+            description.setTypeface(font);
         }
     }
 }
