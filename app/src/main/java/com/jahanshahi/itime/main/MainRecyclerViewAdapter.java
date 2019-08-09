@@ -1,6 +1,7 @@
 package com.jahanshahi.itime.main;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,10 +34,16 @@ public class MainRecyclerViewAdapter extends RecyclerView.Adapter<MainRecyclerVi
 
     @Override
     public void onBindViewHolder(@NonNull MainViewHolder holder, int position) {
-        MainItem item = items.get(position);
+        final MainItem item = items.get(position);
         holder.icon.setImageDrawable(item.getBackground());
         holder.title.setText(item.getTitle());
         holder.description.setText(item.getDescription());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                context.startActivity(new Intent(context,item.getDestination()));
+            }
+        });
     }
 
     @Override

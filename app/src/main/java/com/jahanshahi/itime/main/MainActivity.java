@@ -1,7 +1,6 @@
 package com.jahanshahi.itime.main;
 
 import android.app.Activity;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
@@ -12,6 +11,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.jahanshahi.itime.R;
+import com.jahanshahi.itime.activities.ExportToCSV;
+import com.jahanshahi.itime.activities.ExportToPDF;
+import com.jahanshahi.itime.activities.PickTime;
+import com.jahanshahi.itime.activities.SubmitTime;
+import com.jahanshahi.itime.history.HistoryActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,22 +43,38 @@ public class MainActivity extends AppCompatActivity {
 
     private List<MainItem> getItems(Activity activity) {
         List<MainItem> items = new ArrayList<>();
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 5; i++) {
             MainItem item = new MainItem();
-            item.setTitle("عنوان");
-            item.setDescription("توضیحات");
             switch (i) {
                 case 0:
                     item.setBackground(ContextCompat.getDrawable(activity, R.drawable.clock_ic));
+                    item.setTitle("ثبت زمان و تاریخ");
+                    item.setDescription("زمان و تاریخ حضور را به صورت دستی وارد نمایید");
+                    item.setDestination(PickTime.class);
                     break;
                 case 1:
                     item.setBackground(ContextCompat.getDrawable(activity, R.drawable.clock_cal_ic));
+                    item.setTitle("ثبت زمان و تاریخ");
+                    item.setDescription("زمان و تاریخ حضور را وارد نمایید");
+                    item.setDestination(SubmitTime.class);
                     break;
                 case 2:
-                    item.setBackground(ContextCompat.getDrawable(activity, R.drawable.pdf_ic));
+                    item.setBackground(ContextCompat.getDrawable(activity, R.drawable.history_ic));
+                    item.setTitle("تاریخچه");
+                    item.setDescription("تاریخچه زمان ها را مشاهده نمایید");
+                    item.setDestination(HistoryActivity.class);
                     break;
                 case 3:
+                    item.setBackground(ContextCompat.getDrawable(activity, R.drawable.pdf_ic));
+                    item.setTitle("خروجی PDF");
+                    item.setDescription("از تاریخچه زمان ها خروجی pdf بگیرید");
+                    item.setDestination(ExportToPDF.class);
+                    break;
+                case 4:
                     item.setBackground(ContextCompat.getDrawable(activity, R.drawable.excel_ic));
+                    item.setTitle("خروجی EXCEL");
+                    item.setDescription("از تارخچه زمان ها خروجی excel بگیرید");
+                    item.setDestination(ExportToCSV.class);
                     break;
             }
             items.add(item);

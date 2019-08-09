@@ -12,13 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.SubmitTime">
-        </activity>
-        <activity android:name=".activities.PickTime">
-        </activity>
+        <activity android:name=".activities.SubmitTime"></activity>
+        <activity android:name=".activities.PickTime"></activity>
         <activity android:name=".activities.ExportToPDF" />
         <activity android:name=".activities.ExportToCSV" />
-        <activity android:name=".splash.SplashActivity" >
+        <activity android:name=".splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".history.HistoryActivity" />
-        <activity android:name=".main.MainActivity"></activity>
+        <activity android:name=".main.MainActivity" />
     </application>
 
 </manifest>

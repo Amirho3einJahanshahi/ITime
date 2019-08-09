@@ -27,7 +27,7 @@ public class HistoryActivity extends AppCompatActivity {
 
     private void setupViews(Activity activity) {
         recyclerView = findViewById(R.id.history_recycler_view);
-        historyRecyclerViewAdapter = new HistoryRecyclerViewAdapter(activity,null);
+        historyRecyclerViewAdapter = new HistoryRecyclerViewAdapter(activity);
         recyclerView.setLayoutManager(new LinearLayoutManager(activity,RecyclerView.VERTICAL,false));
         recyclerView.setAdapter(historyRecyclerViewAdapter);
     }
@@ -37,6 +37,6 @@ public class HistoryActivity extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         activity.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         //Set Font
-        font = Typeface.createFromAsset(activity.getAssets(),"");
+        font = Typeface.createFromAsset(activity.getAssets(),"fonts/vazir.ttf");
     }
 }
