@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.jahanshahi.itime.R;
 import com.jahanshahi.itime.activities.ExportToCSV;
 import com.jahanshahi.itime.activities.ExportToPDF;
-import com.jahanshahi.itime.activities.PickTime;
+import com.jahanshahi.itime.activities.PickTimeActivity;
 import com.jahanshahi.itime.activities.SubmitTime;
 import com.jahanshahi.itime.history.HistoryActivity;
 
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                     item.setBackground(ContextCompat.getDrawable(activity, R.drawable.clock_ic));
                     item.setTitle("ثبت زمان و تاریخ");
                     item.setDescription("زمان و تاریخ حضور را به صورت دستی وارد نمایید");
-                    item.setDestination(PickTime.class);
+                    item.setDestination(PickTimeActivity.class);
                     break;
                 case 1:
                     item.setBackground(ContextCompat.getDrawable(activity, R.drawable.clock_cal_ic));

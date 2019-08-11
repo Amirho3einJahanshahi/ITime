@@ -4,12 +4,111 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.PickTime">
+    tools:context=".activities.PickTimeActivity"
+    android:background="@color/colorPrimary"
+    >
     
-    <Button
-        android:id="@+id/enter_date"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="20dp"
+        android:layout_centerInParent="true"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp"
+            >
+            <Button
+                android:id="@+id/enter_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/enter_date_btn_bg"
+                android:layout_margin="8dp"
+                android:text="ثبت تاریخ"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"
+                />
 
+            <Button
+                android:id="@+id/enter_start_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/enter_date"
+                android:layout_margin="8dp"
+                android:background="@drawable/enter_start_time_btn_bg"
+                android:text="ثبت زمان شروع"
+                android:textColor="@android:color/white"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/enter_end_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/enter_end_time_btn_bg"
+                android:layout_margin="8dp"
+                android:text="ثبت زمان پایان"
+                android:layout_below="@+id/enter_start_time"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"
+                />
+
+            <TextView
+                android:id="@+id/enter_date_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="تاریخ : "
+                android:layout_below="@id/enter_end_time"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:textSize="18sp"
+                android:textColor="@android:color/black"
+                />
+            <TextView
+                android:id="@+id/enter_start_time_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ساعت شروع : "
+                android:layout_below="@id/enter_date_text"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16sp"
+                android:textSize="18sp"
+                android:textColor="@android:color/black"
+                />
+            <TextView
+                android:id="@+id/enter_end_time_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ساعت پایان : "
+                android:layout_below="@id/enter_start_time_text"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16sp"
+                android:textSize="18sp"
+                android:textColor="@android:color/black"
+                />
+
+            <Button
+                android:id="@+id/enter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/enter_btn_bg"
+                android:text="ثبت"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"
+                android:layout_below="@id/enter_end_time_text"
+                android:layout_margin="16dp"
+                />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
 
 </RelativeLayout>

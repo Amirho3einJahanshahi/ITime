@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".activities.SubmitTime"></activity>
-        <activity android:name=".activities.PickTime"></activity>
+        <activity android:name=".activities.PickTimeActivity"></activity>
         <activity android:name=".activities.ExportToPDF" />
         <activity android:name=".activities.ExportToCSV" />
         <activity android:name=".splash.SplashActivity">
